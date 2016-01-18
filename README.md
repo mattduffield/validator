@@ -5,12 +5,19 @@ This is a functional styled validation engine.
 ##Welcome to the Validator!
 This library is an attempt to create a functional, easy to use, validation library that has a very small implementation footprint.  It is the goal of this library to remove as much ceremony as possible and allow for rich validation operations.
 
+Given the following customer object:
+
 ``` javascript
 var cust = {
   name: 'john',
   age: 19,
   shirtSize: 'large',
 };
+```
+
+Next, using the following schema validation:
+
+``` javascript
 var schema = {
   name: all([required(), minLen(4), maxLen(12)]),
   age: all([min(21), max(55)]),
@@ -19,7 +26,14 @@ var schema = {
 var val = validate(schema);
 var result = val(cust);
 console.log(result);
+```
 
+Finally, you run the validation engine:
+
+``` javascript
+var val = validate(schema);
+var result = val(cust);
+console.log(result);
 ```
 
 You would get the following in the result object:
