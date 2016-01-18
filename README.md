@@ -53,6 +53,43 @@ You would get the following in the result object:
   } 
 }
 ```
+
+As you can see, the engine tries to create intelligent validation messages when there occurs a failure.  However, you can override this at any time.  Here is an example of a schema that overrides the age error message:
+
+``` javascript
+var schema = {
+  name: all([required(), minLen(4), maxLen(12)]),
+  age: all([min(21, "Sorry, you are not the legal age!"), max(55)]),
+  shirtSize: all([within(['small', 'medium', 'large'])])
+};
+
+var val = validate(schema);
+var result = val(cust);
+console.log(result);
+```
+
+You now get the following error message:
+
+``` javascript
+{ name: { 
+    name: 'name', 
+    value: 'john', 
+    result: [ '', '', '' ] 
+  },
+  age: { 
+    name: 'age',
+    value: 19,
+    result: [ 'Sorry, you are not the legal age!', '' ] 
+  },
+  shirtSize: { 
+    name: 'shirtSize', 
+    value: 'large', 
+    result: [ '' ] 
+  } 
+}
+```
+
+
 ##Documentation
 Please refer to the following documentation for more information:
 

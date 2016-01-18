@@ -11,9 +11,14 @@ var cust = {
   age: 19,
   shirtSize: 'large',
 };
+// var schema = {
+//   name: all([required(), minLen(3), maxLen(12)]),
+//   age: all([min(21), max(55)]),
+//   shirtSize: all([within(['small', 'medium', 'large'])])
+// };
 var schema = {
-  name: all([required(), minLen(3), maxLen(12)]),
-  age: all([min(21), max(55)]),
+  name: all([required(), minLen(4), maxLen(12)]),
+  age: all([min(21, "Sorry, you are not the legal age!"), max(55)]),
   shirtSize: all([within(['small', 'medium', 'large'])])
 };
 var val = validate(schema);
