@@ -80,8 +80,8 @@ Please refer to the following documentation for more information:
 ##Dependencies
 This library has a dependency on the following:
 
-* [RamdaJS](http://ramdajs.com)
-* [BabelJS](https://babeljs.io/)
+* [RamdaJS](http://ramdajs.com) - A practical functional library for Javascript programmers.
+* [BabelJS](https://babeljs.io/) - Babel is a JavaScript compiler.
 
 We use RamdaJS as our functional library to help us create our validation engine as well as our validation functions.  We are using BabelJS to allow for transpiling our ES6 code back to ES5 with a special emphasis on fat arrow (=>) syntax.  
 
