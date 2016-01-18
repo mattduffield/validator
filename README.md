@@ -23,9 +23,6 @@ var schema = {
   age: all([min(21), max(55)]),
   shirtSize: all([within(['small', 'medium', 'large'])])
 };
-var val = validate(schema);
-var result = val(cust);
-console.log(result);
 ```
 
 Finally, you run the validation engine:
