@@ -35,17 +35,17 @@ You would get the following in the result object:
 { name: { 
     name: 'name', 
     value: 'john', 
-    result: [ '', '', '' ] 
+    result: [ ] 
   },
   age: { 
     name: 'age',
     value: 19,
-    result: [ 'Age must be greater than 21', '' ] 
+    result: [ 'Age must be greater than 21' ] 
   },
   shirtSize: { 
     name: 'shirtSize', 
     value: 'large', 
-    result: [ '' ] 
+    result: [ ] 
   } 
 }
 ```
@@ -70,17 +70,17 @@ You now get the following error message:
 { name: { 
     name: 'name', 
     value: 'john', 
-    result: [ '', '', '' ] 
+    result: [ ] 
   },
   age: { 
     name: 'age',
     value: 19,
-    result: [ 'Sorry, you are not the legal age!', '' ] 
+    result: [ 'Sorry, you are not the legal age!' ] 
   },
   shirtSize: { 
     name: 'shirtSize', 
     value: 'large', 
-    result: [ '' ] 
+    result: [ ] 
   } 
 }
 ```
