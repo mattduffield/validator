@@ -30,7 +30,7 @@ The following are the steps required to configure Sublime Text to automatically 
 
 3.	You can test this out if you create a file called, test.js.  In this file put insert the following code:
 
-``` javascriptp Listing 3
+``` javascript
 let greeting = "hello world";
 console.log(greeting);
 ```
