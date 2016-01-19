@@ -23,6 +23,7 @@ var isNotEmpty = (target, fail) => one(x => !R.isEmpty(x), fail || ((value, prop
 var isNumber = (target, fail) => one(x => R.is(Number, x), fail || ((value, prop) => `${firstUC(prop)} must be a Number`));
 var isString = (target, fail) => one(x => R.is(String, x), fail || ((value, prop) => `${firstUC(prop)} must be a String`));
 var isObject = (target, fail) => one(x => R.is(Object, x), fail || ((value, prop) => `${firstUC(prop)} must be an Object`));
+var isFunction = (target, fail) => one(x => R.is(Function, x), fail || ((value, prop) => `${firstUC(prop)} must be a Function`));
 var phone = (target, fail) => regex(/^((([0-9]{3}))|([0-9]{3}))[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$/, fail);
 var email = (target, fail) => regex(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, fail);
 var url = (target, fail) => regex(/(http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-])?/, fail);
@@ -46,6 +47,7 @@ export {
 	isNumber,
 	isString,
 	isObject,
+	isFunction,
 	phone,
 	email,
 	url

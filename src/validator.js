@@ -35,6 +35,7 @@ var validate = R.curry(function(schema, values) {
   return result;
 });
 
+export * from './validator-helper';
 export {
   validate
 };

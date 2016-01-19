@@ -1,10 +1,5 @@
 import R from 'ramda';
-import {validate} from '../src/validator';
-import {one, all, required, 
-  eq, min, max, eqLen, minLen, maxLen,
-  within, regex, isNotEmpty, isNotNil, 
-  isNumber, isString, 
-  phone, email, url} from '../src/validator-helper';
+import * as V from '../src/validator';
 
 var cust = {
   firstname: 'matthew',
@@ -21,26 +16,27 @@ var cust = {
   suffix: null
 };
 var schema = {
-  // firstname: all([one(x => x.length > 4, (value, prop) => 'Name must be longer than 4.')]),
-  firstname: all([eqLen(4), minLen(3), maxLen(7)]),
-  lastname: all([required()]),
-  address: all([required()]),
-  // age: all([min(45, (value, prop) => `${prop} has to be above 45.`)]),
-  // age: all([min(45, "Age must be higher than 45.")]),
-  age: all([min(21), max(55)]),
-  gender: all([required(null, 'Pleaase provide a gender!'), within(['male', 'female'])]),
-  // gender: all([required(null, 'Pleaase provide a gender!'), one(x => x === 'male' || x === 'female', (value, prop) => 'Must be a valid gender.')]),
-  // gender: one(x => x === 'male' || x === 'female', (value, prop) => 'Must be a valid gender.')
-  size: all([within(['small', 'medium', 'large'])]),
-  // phone: all([regex(/^((([0-9]{3}))|([0-9]{3}))[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$/)])
-  phone: all([phone(null, 'Phone did not pass the expression!')]),
-  email: all([required(), email(null, 'Invalid email.')]),
-  url: all([url()]),
-  weight: all([isNumber()]),
-  title: all([isString()]),
-  prefix: all([isNotEmpty()]),
-  suffix: all([required(), isNotNil()])
+  // firstname: V.all([V.one(x => x.length > 4, (value, prop) => 'Name must be longer than 4.')]),
+  firstname: V.all([V.eqLen(4), V.minLen(3), V.maxLen(7)]),
+  lastname: V.all([V.required()]),
+  address: V.all([V.required()]),
+  // age: V.all([V.min(45, (value, prop) => `${prop} has to be above 45.`)]),
+  // age: V.all([V.min(45, "Age must be higher than 45.")]),
+  age: V.all([V.min(21), V.max(55)]),
+  gender: V.all([V.required(null, 'Pleaase provide a gender!'), V.within(['male', 'female'])]),
+  // gender: V.all([V.required(null, 'Pleaase provide a gender!'), V.one(x => x === 'male' || x === 'female', (value, prop) => 'Must be a valid gender.')]),
+  // gender: V.one(x => x === 'male' || x === 'female', (value, prop) => 'Must be a valid gender.')
+  size: V.all([V.within(['small', 'medium', 'large'])]),
+  // phone: V.all([regex(/^((([0-9]{3}))|([0-9]{3}))[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$/)])
+  phone: V.all([V.phone(null, 'Phone did not pass the expression!')]),
+  email: V.all([V.required(), V.email(null, 'Invalid email.')]),
+  url: V.all([V.url()]),
+  weight: V.all([V.isNumber()]),
+  title: V.all([V.isString()]),
+  prefix: V.all([V.isNotEmpty()]),
+  suffix: V.all([V.required(), V.isNotNil()])
 };
-var val = validate(schema);
+var val = V.validate(schema);
 var result = val(cust);
 console.log(result);
+

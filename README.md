@@ -54,7 +54,7 @@ You would get the following in the result object:
 }
 ```
 
-As you can see, the engine tries to create intelligent validation messages when there occurs a failure.  However, you can override this at any time.  Here is an example of a schema that overrides the age error message:
+As you can see, the engine tries to create intelligent validation messages when a failure happens.  However, you can override this at any time.  Here is an example of a schema that overrides the age error message:
 
 ``` javascript
 var schema = {
@@ -89,7 +89,6 @@ You now get the following error message:
 }
 ```
 
-
 ##Documentation
 Please refer to the following documentation for more information:
 
@@ -113,6 +112,17 @@ Please refer to the following documentation for more information:
   - [phone](https://github.com/mattduffield/validator/blob/master/doc/api.md#phonetarget-fail)
   - [email](https://github.com/mattduffield/validator/blob/master/doc/api.md#emailtarget-fail)
   - [url](https://github.com/mattduffield/validator/blob/master/doc/api.md#urltarget-fail)
+
+##Install
+Once you clone or download the repository, simply execute the following command:
+
+``` javascript
+npm install
+```
+
+##Setup
+The following are the steps required to configure Sublime Text to automatically build and test your validations:
+[Setup](https://github.com/mattduffield/validator/blob/master/doc/setup.md)
 
 ##Dependencies
 This library has a dependency on the following:

@@ -1,9 +1,4 @@
-import {validate} from '../src/validator';
-import {one, all, required, 
-  eq, min, max, eqLen, minLen, maxLen,
-  within, regex, isNotEmpty, isNotNil, 
-  isNumber, isString, 
-  phone, email, url} from '../src/validator-helper';
+import * as V from '../src/validator';
 
 
 var cust = {
@@ -12,10 +7,10 @@ var cust = {
   shirtSize: 'large',
 };
 var schema = {
-  name: all([required()]),
-  age: all([min(21), max(55)]),
-  shirtSize: all([within(['small', 'medium', 'large'])])
+  name: V.all([V.required()]),
+  age: V.all([V.min(21), V.max(55)]),
+  shirtSize: V.all([V.within(['small', 'medium', 'large'])])
 };
-var val = validate(schema);
+var val = V.validate(schema);
 var result = val(cust);
 console.log(result);

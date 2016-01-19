@@ -52,6 +52,9 @@ Ensures that the property value is a String.
 ####isObject(target, fail)
 Ensures that the property value is an Object.
 
+####isFunction(target, fail)
+Ensures that the property value is a Function.
+
 ####phone(target, fail)
 Ensures that the property value is valid phone number.
 
