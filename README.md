@@ -1,9 +1,5 @@
-# validator
-
-This is a functional styled validation engine.
-
-##Welcome to the Validator!
-This library is an attempt to create a functional, easy to use, validation library that has a very small implementation footprint.  It is the goal of this library to remove as much ceremony as possible and allow for rich validation operations.
+#Welcome to the Validator!
+This is a functional styled validation engine.  It is an attempt to create a functional, easy to use, validation library that has a very small implementation footprint.  It is the goal of this library to remove as much ceremony as possible and allow for rich validation operations.
 
 Given the following customer object:
 
