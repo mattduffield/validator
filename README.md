@@ -122,6 +122,7 @@ npm install
 
 ##Setup
 The following are the steps required to configure Sublime Text to automatically build and test your validations:
+
 [Setup](https://github.com/mattduffield/validator/blob/master/doc/setup.md)
 
 ##Dependencies
