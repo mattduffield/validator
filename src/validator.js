@@ -31,7 +31,7 @@ var validate = R.curry(function(schema, values) {
   result = R.map(x => {
     return R.dissoc('ignore', x);
   }, result);
-  // Strip of any empty results.
+  // Strip off any empty ('') results.
   result = R.map(x => {
     x.result = x.result.filter((item) => !R.isEmpty(item));
     return x;
