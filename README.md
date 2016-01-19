@@ -109,12 +109,23 @@ Please refer to the following documentation for more information:
   - [email](https://github.com/mattduffield/validator/blob/master/doc/api.md#emailtarget-fail)
   - [url](https://github.com/mattduffield/validator/blob/master/doc/api.md#urltarget-fail)
 
-##Install
-Once you clone or download the repository, simply execute the following command:
+## Building The Code
 
-``` javascript
-npm install
-```
+The samples provided use BabelJS as the transpiler.  These need to be installed in order for the samples to work.  Please use the following steps to ensure you environment is ready:
+
+1. Ensure that [NodeJS](http://nodejs.org/) is installed. This provides the platform on which the build tooling runs.
+
+2. From the project folder, execute the following command:
+
+  ```shell
+  npm install
+  ```
+
+## Running The Samples
+
+To run the examples, you simply need to press **Ctrl+B** on Windows or **Cmd+B** on Mac.  You will see the output of transpiling the code in the output window in Sublime.  
+
+*NOTE*:  You will need to perform the **Setup** steps in order to configure Sublime Text to support this.
 
 ##Setup
 The following are the steps required to configure Sublime Text to automatically build and test your validations:
