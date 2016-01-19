@@ -36,6 +36,6 @@ The following are the steps required to configure Sublime Text to automatically 
 	console.log(greeting);
 	```
 
-4.	Save the file and Build.  You should see something like the following in Sublime:
+4.	Save the file and Build (**Ctrl+B** on Windows or **Cmd+B** on Mac).  You should see something like the following in Sublime:
 
 ![Sublime Text output](https://github.com/mattduffield/validator/blob/master/doc/sublime-text-output.png)
