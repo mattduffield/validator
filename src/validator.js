@@ -17,7 +17,7 @@ var validate = R.curry(function(schema, values) {
       x.ignore = '';
     }
     return x;
-  }, result)
+  }, result);
   // Now that we have processed required fields, we can 
   // safely remove the 'ignore' fields.
   var ig = (val, key) => val['ignore'] === '';
@@ -26,11 +26,16 @@ var validate = R.curry(function(schema, values) {
   result = R.map(x => {
     x.result = R.map(y => y.replace(/__req__/g, ''), x.result);
     return x;
-  }, result)
-  // Finally, remove the 'ignore' field.
+  }, result);
+  // Remove the 'ignore' field.
   result = R.map(x => {
     return R.dissoc('ignore', x);
-  }, result)
+  }, result);
+  // Strip of any empty results.
+  result = R.map(x => {
+    x.result = x.result.filter((item) => !R.isEmpty(item));
+    return x;
+  }, result);
 
   return result;
 });
