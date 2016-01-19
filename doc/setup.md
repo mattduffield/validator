@@ -2,6 +2,7 @@
 The following are the steps required to configure Sublime Text to automatically build and test the sample folder:
 
 1.	In Sublime, goto Tools|Build System|New Build System….
+	
 	a.	You will be presented with a new tab.  Save the tab and give the name, “babel-node.sublime-build”
 
 	b.	If you are using a Mac or Linux, you should be able to use the following:
@@ -30,10 +31,10 @@ The following are the steps required to configure Sublime Text to automatically 
 
 3.	You can test this out if you create a file called, test.js.  In this file put insert the following code:
 
-``` javascript
-let greeting = "hello world";
-console.log(greeting);
-```
+	``` javascript
+	let greeting = "hello world";
+	console.log(greeting);
+	```
 
 4.	Save the file and Build.  You should see something like the following in Sublime:
 
