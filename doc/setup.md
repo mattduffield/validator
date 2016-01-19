@@ -25,7 +25,7 @@ The following are the steps required to configure Sublime Text to automatically 
 
 	d.	For either environments, you can use the command which node and which babel to get the paths.  I am using Git Bash to perform these commands on Windows.
 
-	e.	Next, you need to let Sublime Text know which build system to use.  In Sublime Text, ensure that babel-node is checked from the menu Tools|Build System.  This will execute the the new build script we created and allow you to transpile and execute the examples.
+	e.	Next, you need to let Sublime Text know which build system to use.  In Sublime Text, ensure that **babel-node** is checked from the menu Tools|Build System.  This will execute the the new build script we created and allow you to transpile and execute the examples.
 
 2.	You should be ready to use Sublime to play with scripts.  Take note that Sublime will try and build based on whatever tab is active.  This may or may not be what you want if you are dealing with configuration files.
 
