@@ -7,6 +7,7 @@ var firstUC = prop => R.concat(R.compose(R.toUpper, R.head)(prop), R.tail(prop))
 
 var required = (target, fail) => one(x => x ? true: false, fail || ((value, prop) => `${firstUC(prop)} is a required field`), '__req__');
 var eq = (target, fail) => one(x => x == target, fail || ((value, prop) => `${firstUC(prop)} must equal ${target}`));
+var notEq = (target, fail) => one(x => x != target, fail || ((value, prop) => `${firstUC(prop)} must not equal ${target}`));
 var min = (target, fail) => one(x => x > target, fail || ((value, prop) => `${firstUC(prop)} must be greater than ${target}`));
 var max = (target, fail) => one(x => x < target, fail || ((value, prop) => `${firstUC(prop)} must be less than ${target}`));
 var eqLen = (target, fail) => one(x => x.length == target, fail || ((value, prop) => `${firstUC(prop)} (${value}) length must equal ${target}`));
@@ -35,6 +36,7 @@ export {
 	// Conditions
 	required,
 	eq,
+	notEq,
 	min,
 	max,
 	eqLen,
